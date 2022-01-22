@@ -40,15 +40,12 @@ Os asteroides se movem de forma linear e a nave tem poucos controles, exigindo m
 Será um jogo 2D.
 
 ## Música/Trilha Sonora
-1. Música tema
-O Come O Come Emmanuel - Mystery Mammal
-https://freemusicarchive.org/music/Mystery_Mammal/Xmas_on_Tape/o_come_emmanuel_1272
-2. Música tiro
-Laser
-https://freesound.org/people/Daleonfire/sounds/376694/ 
-3. Explosão asteroide
-Concrete Smash
-https://freesound.org/people/magnuswaker/sounds/522099/ 
+-  Música tema: 
+[O Come O Come Emmanuel - Mystery Mammal](https://freemusicarchive.org/music/Mystery_Mammal/Xmas_on_Tape/o_come_emmanuel_1272 "O Come O Come Emmanuel - Mystery Mammal")
+-  Música tiro: 
+[Laser](https://freesound.org/people/Daleonfire/sounds/376694/  "Laser")
+-  Explosão asteroide: 
+[Concrete Smash](https://freesound.org/people/magnuswaker/sounds/522099/  "Concrete Smash")
 
 ## Interface/Controles
 | **Ação**  |  **Controles** |
