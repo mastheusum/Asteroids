@@ -10,7 +10,7 @@ public class Wrap : MonoBehaviour
     private float topConstant;
     private float bottomConstant;
     float buffer = 0.1f;
-    // Start is called before the first frame update
+    
     void Start()
     {
         cam = Camera.main;
@@ -18,13 +18,13 @@ public class Wrap : MonoBehaviour
         leftConstant = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, cam.transform.position.z)).x;
         bottomConstant = cam.ScreenToWorldPoint(new Vector3(0, 0, cam.transform.position.z)).y;
         topConstant = cam.ScreenToWorldPoint(new Vector3(0, Screen.height, cam.transform.position.z)).y;
-        print("right: " + rightConstant);
-        print("left: " + leftConstant);
-        print( transform.position.y );
+        // print("right: " + rightConstant);
+        // print("left: " + leftConstant);
+        // print( transform.position.y );
 
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         if (transform.position.y > topConstant) {
