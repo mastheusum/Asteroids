@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class AsteroidBehaviour : MonoBehaviour
 {
-    public RigidBody2D rb2D;
+    public Rigidbody2D rb2D;
+    public float velocity = 2.5f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.Rotate(new Vector3(0.0f, 0.0f, Random.Range(0,360)));
+        rb2D.AddForce(transform.right*velocity,ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb2D.AddForce()
+        
     }
 }

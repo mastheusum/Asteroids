@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wrap : MonoBehaviour
 {
-    public Camera cam;
+    private Camera cam;
     private float leftConstant;
     private float rightConstant;
     private float topConstant;
@@ -13,6 +13,7 @@ public class Wrap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         rightConstant = cam.ScreenToWorldPoint(new Vector3(0, 0, cam.transform.position.z)).x;
         leftConstant = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0, cam.transform.position.z)).x;
         bottomConstant = cam.ScreenToWorldPoint(new Vector3(0, 0, cam.transform.position.z)).y;
@@ -47,7 +48,7 @@ public class Wrap : MonoBehaviour
                 transform.position.z
                 );
         }
-        else if (transform.position.y < rightConstant) {
+        else if (transform.position.x < rightConstant) {
             transform.position = new Vector3(
                 leftConstant - buffer,
                 transform.position.y,

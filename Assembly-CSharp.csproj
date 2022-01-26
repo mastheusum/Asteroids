@@ -48,8 +48,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
-     <Compile Include="Assets\Scripts\Wrap.cs" />
      <Compile Include="Assets\Scripts\AsteroidBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Wrap.cs" />
+     <Compile Include="Assets\Scripts\SpawnPoint.cs" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Unity/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
