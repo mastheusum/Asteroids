@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AsteroidDestruction : MonoBehaviour
 {
+    public GameManager game;
     public GameObject prefab;
     public Rigidbody2D rb2D;
     private float scaleChange = 0.75f, scaleLimit = 0.0f;
@@ -27,7 +28,8 @@ public class AsteroidDestruction : MonoBehaviour
                 transform.localScale = new Vector3(transform.localScale.x - scaleChange, transform.localScale.y - scaleChange, 1.0f);
                 Instantiate(prefab, transform.position, transform.rotation);
                 Instantiate(prefab, transform.position, transform.rotation);
-            }            
+            }
+            game.AddPoints();
             Destroy(other.gameObject);            
             Destroy(gameObject);
         }

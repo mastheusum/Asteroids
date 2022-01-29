@@ -43,6 +43,7 @@
      <Compile Include="Assets/Scripts/AsteroidDestruction.cs" />
      <Compile Include="Assets/Scripts/Wrap.cs" />
      <Compile Include="Assets/Scripts/SpawnPoint.cs" />
+     <Compile Include="Assets/Scripts/GameManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/home/victor/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
