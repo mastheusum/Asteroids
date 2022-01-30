@@ -2,20 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Text txtPoints;
-    public float dificult = 1f;
+    //Utilizei o Singleton para usar o GameManager tanto no menu como no jogo
+    public static GameManager game;
     public float timeBase = 8f;
-    private int points = 0;
+
+    Text txtPoints = null;
+    float dificult = 1f;
+    int points = 0;
+
+    // Garanto que estarei usando semre o mesmo GameManager
+    void Awake()
+    {
+        if (game != null && game != this) {
+            Destroy(gameObject);
+        }
+        else {
+            game = this;
+        }
+        DontDestroyOnLoad(game);
+    }
 
     public void AddPoints() {
         points += 1;
+        if (txtPoints == null)
+            txtPoints = GameObject.FindGameObjectsWithTag("Score")[0].GetComponent<Text>();
         txtPoints.text = points.ToString();
     }
 
     public float getTime() {
+        print(dificult);
         return timeBase / dificult;
+    }
+
+    public void ChangeDificult(Dropdown obj) {
+        dificult = obj.value + 1;
+    }
+
+    public void Play() {   
+        SceneManager.LoadScene("Game");
+    }
+
+    public void Quit() {
+        Application.Quit();
     }
 }

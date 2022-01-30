@@ -10,6 +10,7 @@ public class SpawnPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        game = GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<GameManager>();
         /* Parâmetros:
             Nome da função
             Tempo de atraso para a primeira chamada da função

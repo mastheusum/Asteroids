@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719d0c64bda133c95a0f8a7fceaff63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulse: 4
+  impulse: 10
   rig: {fileID: 8158880356895271483}
   cam: {fileID: 0}

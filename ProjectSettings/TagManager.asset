@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Asteroid
   - Shoot
+  - Score
   layers:
   - Default
   - TransparentFX
