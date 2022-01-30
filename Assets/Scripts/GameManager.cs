@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(game);
     }
 
+    public int GetPoints() {
+        return points;
+    }
+
     public void AddPoints() {
         points += 1;
         if (txtPoints == null)
@@ -48,5 +52,9 @@ public class GameManager : MonoBehaviour
 
     public void Quit() {
         Application.Quit();
+    }
+
+    public void GameOver() {
+        SceneManager.LoadScene("GameOver");
     }
 }

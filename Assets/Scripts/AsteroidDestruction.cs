@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AsteroidDestruction : MonoBehaviour
 {
-    public GameManager game;
     public GameObject prefab;
     public Rigidbody2D rb2D;
     private float scaleChange = 0.75f, scaleLimit = 0.0f;
@@ -15,18 +14,20 @@ public class AsteroidDestruction : MonoBehaviour
                 GameObject obj;
                 transform.localScale = new Vector3(transform.localScale.x - scaleChange, transform.localScale.y - scaleChange, 1.0f);
                 obj = Instantiate(prefab, transform.position, transform.rotation);
-                obj.GetComponent<AsteroidDestruction>().game = game;
                 obj = Instantiate(prefab, transform.position, transform.rotation);
-                obj.GetComponent<AsteroidDestruction>().game = game;
             }
-            game.AddPoints();
+            GameManager.game.AddPoints();
             Destroy(other.gameObject);            
             Destroy(gameObject);
         }
         else if (other.gameObject.tag == "Player") {
             // Game Over
             other.gameObject.SetActive(false);
-            Destroy(gameObject);
+            Invoke("GameOver", 2.0f);
         }
+    }
+
+    void GameOver() {
+        GameManager.game.GameOver();
     }
 }
