@@ -41,6 +41,7 @@ public class ScoreBoardBehaviour : MonoBehaviour
     *   Carregar a tabela de pontuação atual (sem a nova pontuação) e mostrar na tela
     */
     public void Load() {
+        DestroyChilds();
         List<HighScoreEntry> scores = new List<HighScoreEntry>();
         scores = XMLManager.instance.LoadScores();
         
@@ -62,6 +63,16 @@ public class ScoreBoardBehaviour : MonoBehaviour
             score.transform.GetChild(1).GetComponent<Text>().text = element.score.ToString();
 
             score.transform.SetParent(GameObject.Find("Content").transform, false);
+        }
+    }
+
+    /*
+    Função responsável por deletar os elementos no Scroll View para que seja possível adicionar novos
+    */
+    void DestroyChilds() {
+        GameObject content = GameObject.Find("Content");
+        foreach (GroupHighScore component in content.GetComponentsInChildren<GroupHighScore>() ) {
+            component.SelfDestroy();
         }
     }
 }

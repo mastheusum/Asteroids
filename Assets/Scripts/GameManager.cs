@@ -46,14 +46,6 @@ public class GameManager : MonoBehaviour
         dificult = obj.value + 1;
     }
 
-    public void Play() {   
-        SceneManager.LoadScene("Game");
-    }
-
-    public void Quit() {
-        Application.Quit();
-    }
-
     public void GameOver() {
         SceneManager.LoadScene("GameOver");
     }
