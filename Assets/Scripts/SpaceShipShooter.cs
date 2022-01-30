@@ -10,6 +10,7 @@ public class SpaceShipShooter : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire")) {
+            Camera.main.GetComponent<AudioManager>().PlayerShoot();
             GameObject obj = Instantiate(shootPrefab, transform.position, transform.rotation);
         }
     }

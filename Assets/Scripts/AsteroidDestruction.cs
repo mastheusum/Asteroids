@@ -17,6 +17,7 @@ public class AsteroidDestruction : MonoBehaviour
                 obj = Instantiate(prefab, transform.position, transform.rotation);
             }
             GameManager.game.AddPoints();
+            Camera.main.GetComponent<AudioManager>().AsteroidDestroyed();
             Destroy(other.gameObject);            
             Destroy(gameObject);
         }
